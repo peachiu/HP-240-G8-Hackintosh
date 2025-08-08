@@ -1,4 +1,4 @@
-# Hackintosh EFI for HP 240 G8 (i3-1005G1, macOS Ventura and macOS Sequoia)
+# Hackintosh EFI for HP 240 G8 (i3-1005G1, macOS Ventura and macOS Sequoia) - Outdated, needs reviewing.
 
 This repository contains EFI files for running macOS on the HP 240 G8 laptop.
 
