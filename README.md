@@ -24,7 +24,7 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 ## 🛠️ Hackintosh Configuration
 
 - **Tested macOS Versions:** 
-  - ✅ **macOS Tahoe (26.1)** - [BETA 2.0.0] - (OpenCore 1.1.0)
+  - ✅ **macOS Tahoe (26.1)** - [BETA 2.0.0] - (OpenCore 1.0.7 DEV)
   - ✅ **macOS Sequoia (15.5)** - [RELEASE 1.0.0] - (OpenCore 1.0.4)
   - ✅ **macOS Sonoma (14.x)** - [RELEASE 1.0.0] - (OpenCore 1.0.4)
   - ✅ **macOS Ventura (13.7.6)** - [RELEASE 1.0.0] - (OpenCore 1.0.4)
