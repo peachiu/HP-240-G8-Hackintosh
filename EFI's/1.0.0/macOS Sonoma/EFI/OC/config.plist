@@ -1550,7 +1550,7 @@
                 <key>BoardProduct</key>
                 <string>Mac-0CFF9C7C2B63DF8D</string>
                 <key>BoardSerialNumber</key>
-                <string>FVF0339024N0000JA</string>
+                <string></string>
                 <key>BoardType</key>
                 <integer>10</integer>
                 <key>BoardVersion</key>
@@ -1560,7 +1560,7 @@
                 <key>ChassisManufacturer</key>
                 <string></string>
                 <key>ChassisSerialNumber</key>
-                <string>FVFD77ZXMNHP</string>
+                <string></string>
                 <key>ChassisType</key>
                 <integer>9</integer>
                 <key>ChassisVersion</key>

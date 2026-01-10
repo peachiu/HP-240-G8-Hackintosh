@@ -1,49 +1,82 @@
-# Hackintosh EFI for HP 240 G8 (i3-1005G1, macOS Ventura and macOS Sequoia) - README.md outdated, needs reviewing.
+# Hackintosh EFI for HP 240 G8 (i3-1005G1)
+### Supported Versions: Ventura, Sonoma, Sequoia & Tahoe (macOS 16)
 
-This repository contains EFI files for running macOS on the HP 240 G8 laptop.
+This repository contains pre-configured EFI files for running macOS on the HP 240 G8 laptop. It has been tested and refined for stability across multiple macOS versions, including the latest macOS Tahoe.
 
-## Hardware Specs
+> [!WARNING]
+> This README is currently being updated. Use the files in the `EFI's` folder corresponding to your target macOS version.
+
+## 💻 Hardware Specifications
 
 - **Model:** HP 240 G8
 - **CPU:** Intel Core i3-1005G1 (10th Gen, Ice Lake)
-- **GPU:** Integrated Intel UHD G1 Graphics
+- **GPU:** Integrated Intel UHD Graphics G1
 - **RAM:** 8GB DDR4 3200MHz
-- **Storage:** Samsung PM991 256GB NVMe SSD (see Status for more info)
-- **Display:** 14" - 1366x768
-- **Wi-Fi/Bluetooth:** Non-stock Intel AX210 (Using itlwm and IntelBluetoothFirmware from OpenIntelWireless for macOS Sequoia and Airportitlwm for macOS Ventura)
-- **Audio:** Realtek ALC236
+- **Storage:** Samsung PM991 256GB NVMe SSD (See [Status](#status) for details)
+- **Display:** 14" (1366x768)
+- **Wi-Fi/Bluetooth:** Intel AX210 (Non-stock)
+  - *Ventura:* Uses `AirportItlwm`
+  - *Sequoia / Tahoe:* Uses `itlwm` + `HeliPort` (Recommended for best stability)
+- **Audio:** Realtek ALC236 (layout-id: 55)
 - **Ethernet:** Realtek GBE 8111 Family Controller
-- **Touchpad:** ELAN (don't use VoodooI2CELAN otherwise it won't work.)
+- **Touchpad:** ELAN (I2C) - *Do not use VoodooI2CELAN as it causes conflicts.*
 
-## Hackintosh Details
+## 🛠️ Hackintosh Configuration
 
-- **Tested macOS Versions:** macOS Sequoia 15.5 and macOS Ventura 13.7.6
-- **Opencore Bootloader Version:** 1.0.4
-- **SMBIOS:** MacBookPro 16,2 (for compatibility with macOS Tahoe in the future, you may use MacBookAir 9,1 if Sequoia or older is your target)
+- **Tested macOS Versions:** 
+  - ✅ **macOS Tahoe (26.1)** - [BETA 2.0.0] - (OpenCore 1.1.0)
+  - ✅ **macOS Sequoia (15.5)** - [1.0.0] - (OpenCore 1.0.4)
+  - ✅ **macOS Sonoma (14.x)** - [1.0.0] - (OpenCore 1.0.4)
+  - ✅ **macOS Ventura (13.7.6)** - [1.0.0] - (OpenCore 1.0.4)
+- **SMBIOS:** 
+  - `MacBookAir9,1` (Recommended for Ice Lake compatibility in macOS Sequoia and below)
+  - `MacBookPro16,2` (Used in Tahoe EFI for broader compatibility)
 
-## Status
+> [!IMPORTANT]
+> **SMBIOS values (Serial, MLB, UUID, ROM) have been cleared from all config.plist files for privacy.** 
+> You **MUST** generate your own unique identifiers using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) or [OCAT](https://github.com/ic005k/OCAuxiliaryTools) before attempting to boot, otherwise iMessage and other iCloud services will not work.
 
-- **Working:** Graphics acceleration, Audio (Built-in Speakers and 3.5mm Jack), Battery status, AirDrop on Ventura, USB ports, Sleep, Ethernet, Touchpad, Camera and Microphone.
-- **Works, but needs manual interaction:** Samsung PM991 NVMe Drive (if you don't have this drive, you probably do not need to do this): due to drivers compability using the NVMeFix kext and getting the NVMe Drive to work is a bit complicated, but it essencially requires you to first install macOS in an external drive, until it fully installs and the oobe starts, then clone the external drive partition to the internal one. This is an "fix", but when disk usage is too high, the write and read speed decreases substantially. If you don't use this fix, have the NVMeFix.kext installed and you use an different drive for the install, the NVMe drive can heat up and even get damaged.
-- **Not Working:** AirDrop on Sequoia (requires AirPortitwlm), Hardware DRM-Protected Content on both macOS Versions (Apple Music Lossless, Apple TV+ and using Safari to watch Netflix, Prime or others).
-- **Not Tested:** HDMI Port (Audio & Video).
 
-## What's Included
+## 📊 Status
 
-- Pre-configured EFI files for a smooth Hackintosh installation on the HP 240 G8.
-- Currently supports macOS Sequoia.
-- REMEMBER TO CHANGE SMBIOS!
+### ✅ Working
+- Graphics Acceleration (Intel UHD G1)
+- Audio (Built-in Speakers, 3.5mm Jack, Microphone)
+- Battery Status & Power Management
+- USB Ports (USB 3.0 / USB-C mapped via USBToolBox)
+- Sleep / Wake
+- Ethernet (Realtek 8111)
+- Touchpad (ELAN - Multi-touch gestures)
+- Camera & Microphone
+- Keyboard (With PT-PT Layout support)
 
-## Who is this for?
+### ⚠️ Partial / Needs Manual Work
+- **Samsung PM991 NVMe:** This drive has compatibility issues with the native NVMe driver.
+  - **Workaround:** Install macOS on an external drive first, then clone the partition to the internal drive.
+  - **Performance:** High disk usage may cause speed drops. `NVMeFix.kext` is included to mitigate heating.
+- **AirDrop/Continuity:** 
+  - Works natively on Ventura with `AirportItlwm`.
+  - Limited/Experimental on Sequoia/Tahoe (Requires `itlwm` or specific beta builds of `AirportItlwm`).
 
-Anyone looking to get macOS running on this specific HP model or similar hardware.
+### ❌ Not Working
+- **DRM-Protected Content:** Hardware DRM (Streaming services on Safari, Apple TV+, etc.) does not work on Intel IGPU. Use Chrome/Firefox for DRM Software protected web streaming.
+- **HDMI Audio/Video:** Does not work. Since Apple removed HDMI from MacBooks and introduced video via USB-C/Thunderbolt on later models such as the one that have a 10th generation Intel Ice Lake processor.
 
-## Coming Soon
+## 🚀 Getting Started
 
-I plan to add:
-- A detailed guide and troubleshooting tips.
-- Notes on kexts, BIOS settings, and post-install tweaks.
-  
+1. **EFI Selection:**
+   - For **Tahoe**, use the files in `EFI's/BETA 2.0.0/macOS Tahoe - nov 2025` - WARNING: This is a beta version and may not work correctly.
+   - For **Sequoia/Sonoma/Ventura**, use the corresponding folders in `EFI's/1.0.0` - WARNING: New update versions are to come soon when i'm able to test them.
+2. **SMBIOS:** Remember to generate your own `SystemSerialNumber`, `MLB`, and `SystemUUID` using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) or [OCAT](https://github.com/ic005k/OCAuxiliaryTools).
+3. **BIOS Settings:**
+   - **Secure Boot:** Disabled
+   - **Fast Boot:** Disabled
+   - **SATA Mode:** AHCI
+   - **VT-d / VT-x:** Enabled
+
+## ⌨️ Extra Features
+- A custom **PT-pt HP Keyboard Layout** is available in the `Keyboard Layouts` folder for better compatibility with the physical keyboard layout of this laptop in the european portuguese layout.
+
 ---
-
 *Feel free to contribute or open issues if you have questions or suggestions!*
+
