@@ -67,11 +67,11 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 
 1. **EFI Selection:**
    - For **Tahoe**, use the files in `EFI's/BETA 2.0.0/macOS Tahoe - nov 2025`
-    > [!WARNING] 
-    > This is a beta version and may not work correctly.
+> [!WARNING] 
+> This is a beta version and may not work correctly.
    - For **Sequoia/Sonoma/Ventura**, use the corresponding folders in `EFI's/1.0.0`
-    > [!WARNING] 
-    > New update versions are to come soon when i'm able to test them.
+> [!WARNING] 
+> New update versions are to come soon when i'm able to test them.
 2. **SMBIOS:** Remember to generate your own `SystemSerialNumber`, `MLB`, and `SystemUUID` using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) or [OCAT](https://github.com/ic005k/OCAuxiliaryTools).
 3. **BIOS Settings:**
    - **Secure Boot:** Disabled
