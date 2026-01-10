@@ -83,5 +83,5 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 - A custom **PT-pt HP Keyboard Layout** is available in the `Keyboard Layouts` folder for better compatibility with the physical keyboard layout of this laptop in the european portuguese layout.
 
 ---
-*Feel free to contribute or open issues if you have questions or suggestions!*
+*Feel free to open issues if you have questions or suggestions!*
 
