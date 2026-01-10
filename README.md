@@ -16,7 +16,7 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 - **Display:** 14" (1366x768)
 - **Wi-Fi/Bluetooth:** Intel AX210 (Non-stock)
   - *Ventura:* Uses `AirportItlwm`
-  - *Sequoia / Tahoe:* Uses `itlwm` + `HeliPort` (Recommended for best stability)
+  - *Sonoma / Sequoia / Tahoe:* Uses `itlwm` + `HeliPort` (Recommended for best stability)
 - **Audio:** Realtek ALC236 (layout-id: 55)
 - **Ethernet:** Realtek GBE 8111 Family Controller
 - **Touchpad:** ELAN (I2C) - *Do not use VoodooI2CELAN as it causes conflicts.*
@@ -25,9 +25,10 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 
 - **Tested macOS Versions:** 
   - ✅ **macOS Tahoe (26.1)** - [BETA 2.0.0] - (OpenCore 1.1.0)
-  - ✅ **macOS Sequoia (15.5)** - [1.0.0] - (OpenCore 1.0.4)
-  - ✅ **macOS Sonoma (14.x)** - [1.0.0] - (OpenCore 1.0.4)
-  - ✅ **macOS Ventura (13.7.6)** - [1.0.0] - (OpenCore 1.0.4)
+  - ✅ **macOS Sequoia (15.5)** - [RELEASE 1.0.0] - (OpenCore 1.0.4)
+  - ✅ **macOS Sonoma (14.x)** - [RELEASE 1.0.0] - (OpenCore 1.0.4)
+  - ✅ **macOS Ventura (13.7.6)** - [RELEASE 1.0.0] - (OpenCore 1.0.4)
+
 - **SMBIOS:** 
   - `MacBookAir9,1` (Recommended for Ice Lake compatibility in macOS Sequoia and below)
   - `MacBookPro16,2` (Used in Tahoe EFI for broader compatibility)
@@ -65,8 +66,12 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 ## 🚀 Getting Started
 
 1. **EFI Selection:**
-   - For **Tahoe**, use the files in `EFI's/BETA 2.0.0/macOS Tahoe - nov 2025` - WARNING: This is a beta version and may not work correctly.
-   - For **Sequoia/Sonoma/Ventura**, use the corresponding folders in `EFI's/1.0.0` - WARNING: New update versions are to come soon when i'm able to test them.
+   - For **Tahoe**, use the files in `EFI's/BETA 2.0.0/macOS Tahoe - nov 2025`
+    > [!WARNING] 
+    > This is a beta version and may not work correctly.
+   - For **Sequoia/Sonoma/Ventura**, use the corresponding folders in `EFI's/1.0.0`
+    > [!WARNING] 
+    > New update versions are to come soon when i'm able to test them.
 2. **SMBIOS:** Remember to generate your own `SystemSerialNumber`, `MLB`, and `SystemUUID` using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) or [OCAT](https://github.com/ic005k/OCAuxiliaryTools).
 3. **BIOS Settings:**
    - **Secure Boot:** Disabled
