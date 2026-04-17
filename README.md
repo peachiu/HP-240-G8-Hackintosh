@@ -12,7 +12,7 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 - **CPU:** Intel Core i3-1005G1 (10th Gen, Ice Lake)
 - **GPU:** Integrated Intel UHD Graphics G1
 - **RAM:** 8GB DDR4 3200MHz
-- **Storage:** Samsung PM991 256GB NVMe SSD (See [Status](#status) for details)
+- **Storage:** Samsung PM991 256GB NVMe SSD (See status, down below, for details)
 - **Display:** 14" (1366x768)
 - **Wi-Fi/Bluetooth:** Intel AX210 (Non-stock)
   - *Ventura:* Uses `AirportItlwm`
@@ -38,7 +38,7 @@ This repository contains pre-configured EFI files for running macOS on the HP 24
 > You **MUST** generate your own unique identifiers using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) or [OCAT](https://github.com/ic005k/OCAuxiliaryTools) before attempting to boot, otherwise iMessage and other iCloud services will not work.
 
 
-## 📊 Status
+## 📊 Status(#status)
 
 ### ✅ Working
 - Graphics Acceleration (Intel UHD G1)
