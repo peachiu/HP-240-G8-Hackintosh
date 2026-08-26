@@ -4,7 +4,7 @@
 This repository contains pre-configured EFI files for running macOS on the HP 240 G8 laptop. It has been tested and refined for stability across multiple macOS versions, including the latest macOS Tahoe.
 
 > [!WARNING]
-> This README is currently being updated. Use the files in the `EFI's` folder corresponding to your target macOS version.
+> This README isn't fully updated, some features might already be working. Use the files in the `EFI's` folder corresponding to your target macOS version.
 
 ## 💻 Hardware Specifications
 
